@@ -4,6 +4,9 @@ import cors from "cors";
 import { PORT, mongoDBURL } from "./config.js";
 import moviesRoute from "./routes/movieRoute.js";
 
+console.log(PORT);
+console.log(process.env.MONGO_URI);
+
 
 const app = express();
 
@@ -13,7 +16,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   console.log(req);
-  return res.status(234).send("Welcome to out movies server!");
+  return res.status(234).send("Welcome to our movies server!");
 });
 
 app.use("/movies", moviesRoute);
