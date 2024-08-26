@@ -44,7 +44,8 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const movies = await Movie.find({});
-
+    console.log('new');
+    
     return res.status(200).json(movies);
   } catch (error) {
     console.log(error.message);
@@ -78,7 +79,7 @@ router.put("/:id", async (req, res) => {
     ) {
       return response.status(400).send({
         message:
-          "Send all required fields: title, director, premiereYear, description, imageUrl",
+          "Send all required fields: title, director, premiereYear, description, imageUrl, videoUrl, category and type",
       });
     }
 
