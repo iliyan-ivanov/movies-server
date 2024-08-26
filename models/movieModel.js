@@ -14,6 +14,10 @@ const movieSchema = mongoose.Schema(
             type: Number,
             required: true
         },
+        category: {
+            type: String,
+            required: true
+        },
         description: {
             type: String,
             required: true
@@ -23,6 +27,10 @@ const movieSchema = mongoose.Schema(
             required: true
         },
         videoUrl: {
+            type: String,
+            required: true
+        },
+        type: {
             type: String,
             required: true
         }

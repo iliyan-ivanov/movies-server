@@ -11,7 +11,9 @@ router.post("/", async (req, res) => {
       !req.body.premiereYear ||
       !req.body.description ||
       !req.body.imageUrl ||
-      !req.body.videoUrl
+      !req.body.videoUrl ||
+      !req.body.category ||
+      !req.body.type
     ) {
       return res.status(400).send({
         message:
@@ -23,9 +25,11 @@ router.post("/", async (req, res) => {
       title: req.body.title,
       director: req.body.director,
       premiereYear: req.body.premiereYear,
+      category: req.body.category,
       description: req.body.description,
       imageUrl: req.body.imageUrl,
-      videoUrl: req.body.videoUrl
+      videoUrl: req.body.videoUrl,
+      type: req.body.type
     };
 
     const movie = await Movie.create(newMovie);
@@ -66,8 +70,11 @@ router.put("/:id", async (req, res) => {
       !req.body.title ||
       !req.body.director ||
       !req.body.premiereYear ||
+      !req.body.category ||
       !req.body.description ||
-      !req.body.imageUrl
+      !req.body.imageUrl ||
+      !req.body.videoUrl ||
+      !req.body.type
     ) {
       return response.status(400).send({
         message:
