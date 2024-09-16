@@ -28,11 +28,12 @@ const movieSchema = mongoose.Schema(
         imageUrl: {
             type: String,
             required: true,
-            validate: /^https:\/\/www.youtube.com\/?/
+            validate: /^https?/
         },
         videoUrl: {
             type: String,
-            required: true
+            required: true,
+            validate: /^https:\/\/www.youtube.com\/?/
         },
         type: {
             type: String,
