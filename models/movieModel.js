@@ -4,15 +4,18 @@ const movieSchema = mongoose.Schema(
     {
         title: {
             type: String,
-            required: true
+            required: true,
+            maxlength: 50
         },
         director: {
             type: String,
-            required: true
+            required: true,
+            maxlength: 30
         },
         premiereYear: {
             type: Number,
-            required: true
+            required: true,
+            maxlength: 4
         },
         category: {
             type: String,
@@ -24,7 +27,8 @@ const movieSchema = mongoose.Schema(
         },
         imageUrl: {
             type: String,
-            required: true
+            required: true,
+            validate: /^https:\/\/www.youtube.com\/?/
         },
         videoUrl: {
             type: String,
